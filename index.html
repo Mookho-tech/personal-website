@@ -5,105 +5,232 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background-color: #3498db;
+            z-index: 100;
+        }
+
+        .hero h1 {
+            overflow: hidden;
+            border-right: .15em solid #3498db;
+            white-space: nowrap;
+            animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #3498db;
+            }
+        }
+
+        .button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            background-color: #fff;
+        }
+
+        .about-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+
+        .about-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-content img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px 0;
+        }
+
+        .project-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            font-size: 1.5em;
+            color: #3498db;
+        }
+
+        .project-card p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .contact-form {
+            padding: 50px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .social-icon {
+            color: #3498db;
+            font-size: 1.5em;
+            margin: 0 10px;
+        }
+
+        .social-icon:hover {
+            color: #2980b9;
+        }
+    </style>
 </head>
 
 <body>
-
-    <!-- Scroll Progress Bar -->
     <div id="scroll-progress"></div>
-
-    <!-- Header -->
     <header>
         <nav>
             <ul>
                 <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#resume">Resume</a></li> <!-- Added Resume link -->
+                <li><a href="#resume">Resume</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="hero" class="hero">
-        <h1>Welcome to My Portfolio</h1>
+        <h1>Mookho Ernestina Makutsoane</h1>
         <p>Explore my projects and get to know more about my work.</p>
+        <a href="#projects"><button class="button">View My Work</button></a>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="fade-in">
-        <h2>My Python Projects</h2>
-        <div class="projects-container">
-            <!-- Project 1 - Expense Tracker -->
-            <div class="project-card">
-                <h3>Expense Tracker</h3>
-                <p>A Python application that helps you track your expenses and manage your budget efficiently.</p>
-                <a href="https://github.com/Mookho-tech/expense-tracker" target="_blank">View on GitHub</a>
-
-            </div>
-
-            <!-- Project 2 - Task Manager -->
-            <div class="project-card">
-                <h3>Task Manager</h3>
-                <p>A task management tool built in Python to organize and prioritize your tasks seamlessly.</p>
-                <a href="https://github.com/Mookho-tech/TaskManager" target="_blank">View on GitHub</a>
-            </div>
-
-            <!-- Project 3 - Password Manager -->
-            <div class="project-card">
-                <h3>Password Manager</h3>
-                <p>A secure Python application to store and manage your passwords.</p>
-                <a href="https://github.com/Mookho-tech/PasswordManager" target="_blank">View on GitHub</a>
-
+    <section id="about" class="about-container">
+        <div class="about-content">
+            <img src="images/6.jpg" alt="Profile Picture">
+            <h2>About Me</h2>
+            <p>Hello! I'm Mookho Ernestina Makutsoane, a passionate Software Developer and Graphic Designer based in Johannesburg. I thrive on transforming ideas into reality through code and creativity. With a blend of technical skills and artistic vision, I craft digital solutions that not only function seamlessly but also look stunning. Let's build something amazing together!</p>
         </div>
     </section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="fade-in">
-        <h2>My Resume</h2>
-        <p>Here is a brief overview of my career. You can also <a href="Mookho Resume.pdf" target="_blank">download my resume</a> for more details.</p>
+    <section id="projects">
+        <h2>My Python Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3><a href="https://github.com/Mookho-tech/Expense-Tracker" target="_blank">Expense Tracker</a></h3>
+                <p>A Python application that helps you track your expenses and manage your budget efficiently.</p>
+                <a href="https://github.com/Mookho-tech/Expense-Tracker" class="button" target="_blank">View on GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <h3><a href="https://github.com/Mookho-tech/Task-Manager" target="_blank">Task Manager</a></h3>
+                <p>A task management tool built in Python to organize and prioritize your tasks seamlessly.</p>
+                <a href="https://github.com/Mookho-tech/Task-Manager" class="button" target="_blank">View on GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <h3><a href="https://github.com/Mookho-tech/Password-Manager" target="_blank">Password Manager</a></h3>
+                <p>A secure Python application to store and manage your passwords.</p>
+                <a href="https://github.com/Mookho-tech/Password-Manager" class="button" target="_blank">View on GitHub</a>
+            </div>
+        </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="fade-in">
+    <section id="resume">
+        <h2>My Resume</h2>
+        <p>Here is a brief overview of my career. You can also download my resume for more details.</p>
+        <a href="Mookho_Resume.pdf" class="button" download>Download My Resume</a>
+    </section>
+
+    <section id="contact" class="contact-form">
         <h2>Contact Me</h2>
-        <form action="https://formspree.io/f/{your-form-id}" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required><br>
+            <input type="email" name="email" placeholder="Your Email" required><br>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea><br>
+            <button type="submit" class="button">Send Message</button>
         </form>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Mookho Ernestina Makutsoane. All rights reserved.</p>
-
-        <!-- Social Media Links -->
         <div class="social-media">
-            <a href="https://www.linkedin.com/in/mookho-makutsoane-613195125/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/Mookho-tech" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mookho-makutsoane-613195125/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/Mookho-tech" class="social-icon"><i class="fab fa-github"></i></a>
         </div>
     </footer>
-
-    <!-- JavaScript for Scroll Progress -->
-    <script>
-        const progressBar = document.getElementById('scroll-progress');
-        window.onscroll = () => {
-            const scrollPosition = document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercentage = (scrollPosition / scrollHeight) * 100;
-            progressBar.style.width = scrollPercentage + '%';
-        };
-    </script>
 
 </body>
 
 </html>
-
-
 
