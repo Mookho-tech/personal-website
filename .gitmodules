@@ -1,0 +1,3 @@
+[submodule "flask-contact-form"]
+    path = flask-contact-form
+    url = https://github.com/Mookho-tech/flask-contact-form.git
