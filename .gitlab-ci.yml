@@ -1,0 +1,35 @@
+image: python:3.11  # Use a Python image for Jekyll + Python compatibility
+
+stages:
+  - setup
+  - build
+
+variables:
+  JEKYLL_ENV: production  # Set Jekyll environment to production
+
+cache:
+  paths:
+    - venv/  # Cache virtual environment to speed up builds
+    - .bundle  # Cache Jekyll dependencies if used
+
+setup:
+  stage: setup
+  script:
+    - python3 -m venv venv  # Create virtual environment
+    - source venv/bin/activate  # Activate virtual environment
+    - pip install --upgrade pip  # Upgrade pip
+    - pip install -r requirements.txt  # Install Python dependencies
+  artifacts:
+    paths:
+      - venv/
+
+build:
+  stage: build
+  script:
+    - source venv/bin/activate  # Activate virtual environment
+    - gem install bundler  # Install Bundler for Ruby dependencies
+    - bundle install  # Install Jekyll and plugins
+    - jekyll build  # Build the Jekyll site
+  artifacts:
+    paths:
+      - _site  # Save the built site as an artifact
