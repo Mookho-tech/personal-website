@@ -1,35 +1,49 @@
-image: python:3.11  # Use a Python image for Jekyll + Python compatibility
+image: jekyll/builder:latest  # Includes Ruby, Jekyll, Bundler
 
 stages:
   - setup
   - build
+  - deploy
 
 variables:
-  JEKYLL_ENV: production  # Set Jekyll environment to production
+  JEKYLL_ENV: production  # Set Jekyll to production mode
 
 cache:
   paths:
-    - venv/  # Cache virtual environment to speed up builds
-    - .bundle  # Cache Jekyll dependencies if used
+    - venv/  # Cache Python virtual environment
+    - .bundle/  # Cache Jekyll dependencies
+    - vendor/bundle  # Cache Ruby gems
 
 setup:
   stage: setup
   script:
     - python3 -m venv venv  # Create virtual environment
-    - source venv/bin/activate  # Activate virtual environment
+    - source venv/bin/activate  # Activate venv
     - pip install --upgrade pip  # Upgrade pip
     - pip install -r requirements.txt  # Install Python dependencies
+    - gem install bundler  # Ensure Bundler is installed for Ruby
   artifacts:
     paths:
-      - venv/
+      - venv/  # Save virtual environment for next stages
 
 build:
   stage: build
+  dependencies:
+    - setup  # Ensure setup stage runs first
   script:
-    - source venv/bin/activate  # Activate virtual environment
-    - gem install bundler  # Install Bundler for Ruby dependencies
-    - bundle install  # Install Jekyll and plugins
-    - jekyll build  # Build the Jekyll site
+    - source venv/bin/activate  # Reactivate virtual environment
+    - bundle install  # Install Jekyll & dependencies
+    - jekyll build  # Build Jekyll site
   artifacts:
     paths:
-      - _site  # Save the built site as an artifact
+      - _site/  # Store the built site
+
+deploy:
+  stage: deploy
+  script:
+    - cp -r _site/* public/  # Copy built site to public directory for GitLab Pages
+  artifacts:
+    paths:
+      - public/  # GitLab Pages expects files in the "public/" directory
+  only:
+    - main  # Deploy only on the main branch
