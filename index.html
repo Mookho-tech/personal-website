@@ -4,233 +4,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Mookho Makutsoane | Software Developer & Designer</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f0f0;
-            overflow-x: hidden;
-        }
-
-        #scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 5px;
-            background-color: #3498db;
-            z-index: 100;
-        }
-
-        .hero h1 {
-            overflow: hidden;
-            border-right: .15em solid #3498db;
-            white-space: nowrap;
-            animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: 100%;
-            }
-        }
-
-        @keyframes blink-caret {
-            from,
-            to {
-                border-color: transparent;
-            }
-
-            50% {
-                border-color: #3498db;
-            }
-        }
-
-        .button {
-            background-color: #3498db;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            text-decoration: none;
-        }
-
-        .button:hover {
-            background-color: #2980b9;
-        }
-
-        .about-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 50px 20px;
-            background-color: #fff;
-        }
-
-        .about-content {
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .about-content h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #3498db;
-        }
-
-        .about-content p {
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: #555;
-        }
-
-        .about-content img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            margin-bottom: 20px;
-        }
-
-        .projects-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 50px 0;
-        }
-
-        .project-card {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .project-card h3 {
-            font-size: 1.5em;
-            color: #3498db;
-        }
-
-        .project-card p {
-            font-size: 1em;
-            color: #555;
-        }
-
-        .contact-form {
-            padding: 50px 20px;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-
-        .social-icon {
-            color: #3498db;
-            font-size: 1.5em;
-            margin: 0 10px;
-        }
-
-        .social-icon:hover {
-            color: #2980b9;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 
 <body>
+    <!-- Scroll Progress Indicator -->
     <div id="scroll-progress"></div>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#resume">Resume</a></li>
-            </ul>
-        </nav>
+
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Mookho<span>.</span></a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#resume" class="nav-link">Resume</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <section id="hero" class="hero">
-        <h1>Mookho Ernestina Makutsoane</h1>
-        <p>Explore my projects and get to know more about my work.</p>
-        <a href="#projects"><button class="button">View My Work</button></a>
-    </section>
-
-    <section id="about" class="about-container">
-        <div class="about-content">
-            <img src="images/6.jpg" alt="Profile Picture">
-            <h2>About Me</h2>
-            <p>Hello! I'm Mookho Ernestina Makutsoane, a passionate Software Developer and Graphic Designer based in Johannesburg. I thrive on transforming ideas into reality through code and creativity. With a blend of technical skills and artistic vision, I craft digital solutions that not only function seamlessly but also look stunning. Let's build something amazing together!</p>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>My Python Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <h3><a href="https://github.com/Mookho-tech/Expense-Tracker" target="_blank">Expense Tracker</a></h3>
-                <p>A Python application that helps you track your expenses and manage your budget efficiently.</p>
-                <a href="https://github.com/Mookho-tech/Expense-Tracker" class="button" target="_blank">View on GitHub</a>
-            </div>
-
-            <div class="project-card">
-                <h3><a href="https://github.com/Mookho-tech/Task-Manager" target="_blank">Task Manager</a></h3>
-                <p>A task management tool built in Python to organize and prioritize your tasks seamlessly.</p>
-                <a href="https://github.com/Mookho-tech/Task-Manager" class="button" target="_blank">View on GitHub</a>
-            </div>
-
-            <div class="project-card">
-                <h3><a href="https://github.com/Mookho-tech/Password-Manager" target="_blank">Password Manager</a></h3>
-                <p>A secure Python application to store and manage your passwords.</p>
-                <a href="https://github.com/Mookho-tech/Password-Manager" class="button" target="_blank">View on GitHub</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate__animated animate__fadeInDown">Mookho Ernestina Makutsoane</h1>
+                <h2 class="animate__animated animate__fadeInUp animate__delay-1s">Software Developer & Graphic Designer</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-2s">Transforming ideas into digital solutions with code and creativity</p>
+                <div class="hero-buttons animate__animated animate__fadeIn animate__delay-3s">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="resume">
-        <h2>My Resume</h2>
-        <p>Here is a brief overview of my career. You can also download my resume for more details.</p>
-        <a href="Mookho_Resume.pdf" class="button" download>Download My Resume</a>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="images/6.jpg" alt="Mookho Makutsoane" class="profile-img">
+                </div>
+                <div class="about-text">
+                    <p>Hello! I'm Mookho Ernestina Makutsoane, a passionate Software Developer and Graphic Designer based in Johannesburg.</p>
+                    <p>I thrive on transforming ideas into reality through code and creativity. With a blend of technical skills and artistic vision, I craft digital solutions that not only function seamlessly but also look stunning.</p>
+                    <p>My expertise includes Python development, web design, and creating intuitive user experiences. I'm constantly learning and adapting to new technologies to deliver innovative solutions.</p>
+                    <div class="skills">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-tags">
+                            <span>Python</span>
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>UI/UX Design</span>
+                            <span>Graphic Design</span>
+                            <span>Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="contact" class="contact-form">
-        <h2>Contact Me</h2>
-        <form action="#" method="post">
-            <input type="text" name="name" placeholder="Your Name" required><br>
-            <input type="email" name="email" placeholder="Your Email" required><br>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea><br>
-            <button type="submit" class="button">Send Message</button>
-        </form>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x250?text=Expense+Tracker" alt="Expense Tracker">
+                    </div>
+                    <div class="project-info">
+                        <h3>Expense Tracker</h3>
+                        <p>A Python application that helps you track your expenses and manage your budget efficiently with data visualization.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Mookho-tech/Expense-Tracker" target="_blank" class="btn btn-small">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x250?text=Task+Manager" alt="Task Manager">
+                    </div>
+                    <div class="project-info">
+                        <h3>Task Manager</h3>
+                        <p>A productivity tool built with Python and Tkinter to organize, prioritize, and track your tasks with deadlines.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Mookho-tech/Task-Manager" target="_blank" class="btn btn-small">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/400x250?text=Password+Manager" alt="Password Manager">
+                    </div>
+                    <div class="project-info">
+                        <h3>Password Manager</h3>
+                        <p>A secure application with encryption to store and manage your passwords with master password protection.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Mookho-tech/Password-Manager" target="_blank" class="btn btn-small">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Mookho Ernestina Makutsoane. All rights reserved.</p>
-        <div class="social-media">
-            <a href="https://www.linkedin.com/in/mookho-makutsoane-613195125/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/Mookho-tech" class="social-icon"><i class="fab fa-github"></i></a>
+    <!-- Resume Section -->
+    <section id="resume" class="resume">
+        <div class="container">
+            <h2 class="section-title">My Resume</h2>
+            <div class="resume-content">
+                <div class="resume-summary">
+                    <h3>Professional Summary</h3>
+                    <p>Detail-oriented Software Developer with experience in Python programming and graphic design. Passionate about creating efficient, user-friendly applications with clean code and intuitive interfaces.</p>
+                    
+                    <h3>Education</h3>
+                    <div class="timeline-item">
+                        <h4>Bachelor's Degree in Computer Science</h4>
+                        <p>University of Johannesburg | 2015 - 2018</p>
+                    </div>
+                    
+                    <h3>Skills</h3>
+                    <ul class="skills-list">
+                        <li>Python Development</li>
+                        <li>Web Design</li>
+                        <li>UI/UX Principles</li>
+                        <li>Problem Solving</li>
+                        <li>Project Management</li>
+                    </ul>
+                </div>
+                <div class="resume-download">
+                    <p>Download my full resume to learn more about my experience and qualifications.</p>
+                    <a href="Mookho_Resume.pdf" class="btn btn-primary" download>
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> mookho.makutsoane@example.com</p>
+                    <p><i class="fas fa-phone"></i> +27 12 345 6789</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Johannesburg, South Africa</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/mookho-makutsoane-613195125/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Mookho-tech" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <form class="contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#">Mookho<span>.</span></a>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/mookho-makutsoane-613195125/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Mookho-tech" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mookho Ernestina Makutsoane. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
-
 </html>
 
